@@ -10,12 +10,10 @@ class Initializer {
     this.dir = dir || INITAL_DIR
   }
 
-  dirExists(){
+  initialize(){
     try {
-      stats = fs.statSync(this.dir)
-    } catch (e) {
-      return false
-    }
+      fs.mkdirSync(this.dir)
+    } catch (e) {}
     return true
   }
 }
@@ -24,5 +22,7 @@ let initializer = new Initializer()
 try {
   fs.unlinkSync(initializer.dir)
 } catch(e) {}
-
-assert(initializer.dirExists() === false, 'sees no dir')
+initializer.initialize()
+assert(fs.statSync(initializer.dir).isDirectory() === true, 'creates dir if not there')
+initializer.initialize()
+assert(fs.statSync(initializer.dir).isDirectory() === true, 'can be initialized if dir is there')
