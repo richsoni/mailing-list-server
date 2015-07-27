@@ -2,13 +2,13 @@
 
 const assert      = require("assert")
 const fs          = require("fs")
-const Initializer = require(__dirname + "/../../lib/initializer")
+const Connection  = require(__dirname + "/../../lib/connection")
 
-let initializer = new Initializer('test/.data')
+let connection = new Connection('test/.data')
 try {
-  fs.unlinkSync(initializer.dir)
+  fs.unlinkSync(connection.dir)
 } catch(e) {}
-initializer.initialize()
-assert(fs.statSync(initializer.dir).isDirectory() === true, 'creates dir if not there')
-initializer.initialize()
-assert(fs.statSync(initializer.dir).isDirectory() === true, 'can be initialized if dir is there')
+connection._initialize()
+assert(fs.statSync(connection.dir).isDirectory() === true, 'creates dir if not there')
+connection._initialize()
+assert(fs.statSync(connection.dir).isDirectory() === true, 'can be initialized if dir is there')
