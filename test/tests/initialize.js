@@ -18,7 +18,7 @@ class Initializer {
   }
 }
 
-let initializer = new Initializer()
+let initializer = new Initializer('test/.data')
 try {
   fs.unlinkSync(initializer.dir)
 } catch(e) {}
