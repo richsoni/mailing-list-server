@@ -1,22 +1,8 @@
 "use strict";
 
-const assert = require("assert")
-// const fs         = require("fs")
-
-const fs         = require("fs")
-const INITAL_DIR = './.data'
-class Initializer {
-  constructor(dir) {
-    this.dir = dir || INITAL_DIR
-  }
-
-  initialize(){
-    try {
-      fs.mkdirSync(this.dir)
-    } catch (e) {}
-    return true
-  }
-}
+const assert      = require("assert")
+const fs          = require("fs")
+const Initializer = require(__dirname + "/../../lib/initializer")
 
 let initializer = new Initializer('test/.data')
 try {
