@@ -10,5 +10,7 @@ try {
 } catch(e) {}
 connection._initialize()
 assert(fs.statSync(connection.dir).isDirectory() === true, 'creates dir if not there')
+assert(fs.statSync(connection.dir+'/users').isDirectory() === true, 'creates dir if not there')
+assert(fs.statSync(connection.dir+'/subscribers').isDirectory() === true, 'creates dir if not there')
 connection._initialize()
 assert(fs.statSync(connection.dir).isDirectory() === true, 'can be initialized if dir is there')
