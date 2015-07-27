@@ -4,7 +4,7 @@ const assert      = require("assert")
 const fs          = require("fs")
 const Connection  = require(__dirname + "/../../lib/connection")
 
-let connection = new Connection('test/.data')
+let connection = new Connection(C.TEST_DIR)
 try {
   fs.unlinkSync(connection.dir)
 } catch(e) {}
