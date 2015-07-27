@@ -1,0 +1,14 @@
+{
+  "name": "mailinglist-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "simple-test-of-fate": "0.0.7"
+  }
+}
