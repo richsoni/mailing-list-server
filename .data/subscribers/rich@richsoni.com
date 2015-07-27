@@ -1,1 +1,1 @@
-./.data/users/rich@richsoni.com
+/home/rich/code/projects/JS/mailinglistServer/.data/users/rich@richsoni.com
